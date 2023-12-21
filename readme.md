@@ -6,7 +6,7 @@ Supported types
 ```
 typename | size(bytes) | info
 ----------------------------------
-char        1             ASCII characters
+_char       1             ASCII characters
   
 ri08        1             real signed int8      
 ri16        2             real signed int16
@@ -27,14 +27,15 @@ cu08        2             complex unsigned int8
 cu16        4             complex unsigned int16
 cu32        8             complex unsigned int32
 cu64        16            complex unsigned int64
-cf32        8             complex float(32)
-cf64        16            complex double(64)
+cf32        8             complex <float(32), float32>
+cf64        16            complex <double(64), double(64)>
 ```
 
 Format Scheme
 -------------
 ```
 Header:
+  8b total size
   4b format_signature
   1b uintx_size => 1u       # {4, 8} bytes
   1b max_block_name_lenght
